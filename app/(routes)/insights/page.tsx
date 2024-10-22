@@ -8,7 +8,6 @@ import {
   IconHomeDollar,
   IconMail,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
 
 const page = () => {
   const links = [
