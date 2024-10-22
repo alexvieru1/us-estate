@@ -137,7 +137,7 @@ const page = () => {
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
           {content.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
-              <h2 className="bg-black text-white text-xl rounded-full font-semibold w-fit mb-4">
+              <h2 className="bg-[#6344F5] text-white text-xl px-2 rounded-full font-semibold w-fit mb-4">
                 {item.badge}
               </h2>
 
