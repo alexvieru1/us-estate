@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import {
   Modal,
@@ -33,6 +33,7 @@ import {
   IconSailboat,
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 const featureIcons: { [key: string]: JSX.Element } = {
   Pool: <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
@@ -97,9 +98,11 @@ export const Card = React.memo(
               <ModalContent>
                 <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
                   Book your viewing to{" "}
+                  <br />
                   <span className="px-1 py-0.5 rounded-md bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200">
                     {card.title}
                   </span>{" "}
+                  <br />
                   now!
                 </h4>
                 <div className="flex justify-center items-center">
@@ -120,7 +123,7 @@ export const Card = React.memo(
                           rotate: 0,
                           zIndex: 100,
                         }}
-                        className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
+                        className="rounded-xl -mr-4 mt-4 p-1 bg-neutral-800 dark:bg-neutral-100 dark:border-neutral-100 border border-neutral-700 flex-shrink-0 overflow-hidden"
                       >
                         <Image
                           src={image}
@@ -133,7 +136,7 @@ export const Card = React.memo(
                     )
                   )}
                 </div>
-                <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
+                <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-center max-w-sm mx-auto">
                   <div className="flex  items-center justify-center">
                     <IconCurrencyDollar className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                     <span className="text-neutral-700 dark:text-neutral-300 text-sm">
@@ -193,9 +196,11 @@ export const Card = React.memo(
                 </div>
               </ModalContent>
               <ModalFooter className="gap-4">
-                <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                  Book Now
-                </button>
+                <Link href='/contact'>
+                  <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+                    Book Now
+                  </button>
+                </Link>
               </ModalFooter>
             </ModalBody>
           </Modal>
@@ -214,6 +219,31 @@ type Card = {
 
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
+
+    // Function to handle scrolling
+    const handleScroll = () => {
+        if (hovered !== null) {
+          setHovered(null); // Reset hover state on scroll
+        }
+      };
+    
+      // Add scroll event listener on mount and remove it on cleanup
+      useEffect(() => {
+        // Throttle scroll handling
+        let scrollTimeout: any;
+        const handleThrottledScroll = () => {
+          if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+          }
+          scrollTimeout = setTimeout(handleScroll, 150); // Reset hover state after scroll delay
+        };
+    
+        window.addEventListener("scroll", handleThrottledScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleThrottledScroll);
+        };
+      }, [hovered]);
 
   return (
     <div className="grid grid-cols-1 px-8 my-10 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">

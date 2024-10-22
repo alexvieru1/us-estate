@@ -16,9 +16,40 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      screens: {
+        '4xs': '160px',
+        // => @media (min-width: 160px) { ... }
+        
+        '3xs': '240px',
+        // => @media (min-width: 240px) { ... }
+
+        '2xs': '320px',
+        // => @media (min-width: 320px) { ... }
+
+        'xs': '480px',
+        // => @media (min-width: 480px) { ... }
+
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+  
+        'md': '768px',
+        // => @media (min-width: 768px) { ... }
+  
+        'lg': '1024px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+  
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
       },
     },
   },

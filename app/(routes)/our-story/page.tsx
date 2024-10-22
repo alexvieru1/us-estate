@@ -132,8 +132,8 @@ const page = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <TracingBeam className="px-14 0mt-10 mb-20">
+    <div className="flex flex-col justify-center items-center p-4">
+      <TracingBeam className="px-14 0mt-10 mb-6 lg:mb-24">
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
           {content.map((item, index) => (
             <div key={`content-${index}`} className="mb-10">
