@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import {
   Modal,
@@ -220,30 +220,30 @@ type Card = {
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
-    // Function to handle scrolling
-    const handleScroll = () => {
-        if (hovered !== null) {
-          setHovered(null); // Reset hover state on scroll
-        }
-      };
-    
-      // Add scroll event listener on mount and remove it on cleanup
-      useEffect(() => {
-        // Throttle scroll handling
-        let scrollTimeout: any;
-        const handleThrottledScroll = () => {
-          if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-          }
-          scrollTimeout = setTimeout(handleScroll, 150); // Reset hover state after scroll delay
-        };
-    
-        window.addEventListener("scroll", handleThrottledScroll);
-    
-        return () => {
-          window.removeEventListener("scroll", handleThrottledScroll);
-        };
-      }, [hovered]);
+  // Function to handle scrolling, wrapped in useCallback to prevent unnecessary re-creations
+  const handleScroll = useCallback(() => {
+    if (hovered !== null) {
+      setHovered(null); // Reset hover state on scroll
+    }
+  }, [hovered]);
+
+  // Add scroll event listener on mount and remove it on cleanup
+  useEffect(() => {
+    // Throttle scroll handling
+    let scrollTimeout: NodeJS.Timeout;
+    const handleThrottledScroll = () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(handleScroll, 150); // Reset hover state after scroll delay
+    };
+
+    window.addEventListener("scroll", handleThrottledScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleThrottledScroll);
+    };
+  }, [handleScroll]); // Ensure handleScroll is included as a dependency
 
   return (
     <div className="grid grid-cols-1 px-8 my-10 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full">
