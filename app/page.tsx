@@ -35,7 +35,7 @@ export default function Home() {
       href: "/properties",
     },
     {
-      title: "Insights",  // You can change this to "Blog" if preferred
+      title: "Insights", // You can change this to "Blog" if preferred
       icon: (
         <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -49,7 +49,7 @@ export default function Home() {
       href: "/contact",
     },
   ];
-  
+
   return (
     <div className="flex flex-col justify-center items-center">
       <HeroHighlight>
@@ -68,9 +68,9 @@ export default function Home() {
           }}
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
-          Discover a New Standard of Luxury Living <br />
+          Intră într-o lume a luxului redefinit. <br />
           <Highlight className="text-black dark:text-white">
-            Unmatched. Unrivaled. Unforgettable.
+            Excepțional. Distins. Remarcabil.
           </Highlight>
         </motion.h1>
       </HeroHighlight>

@@ -61,27 +61,27 @@ const page = () => {
     <div className="flex flex-col justify-center items-center mb-10">
       <div className="mt-10 lg:mt-20 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Contact Us
+          Contactați-ne
         </h2>
         <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Have any questions or inquiries? Feel free to reach out using the form
-          below.
+          Aveți întrebări sau nelămuriri? Nu ezitați să ne contactați folosind
+          formularul de mai jos.
         </p>
 
         <form className="my-8" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">First name</Label>
+              <Label htmlFor="firstname">Prenume</Label>
               <Input id="firstname" placeholder="John" type="text" required />
             </LabelInputContainer>
             <LabelInputContainer>
-              <Label htmlFor="lastname">Last name</Label>
+              <Label htmlFor="lastname">Nume</Label>
               <Input id="lastname" placeholder="Doe" type="text" required />
             </LabelInputContainer>
           </div>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Email Address</Label>
+            <Label htmlFor="email">Adresă de email</Label>
             <Input
               id="email"
               placeholder="johndoe@email.com"
@@ -91,20 +91,22 @@ const page = () => {
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="subject">Subject</Label>
+            <Label htmlFor="subject">Subiect</Label>
             <Input
               id="subject"
-              placeholder="Subject of your message"
+              placeholder="Subiectul mesajului dumneavoastră"
               type="text"
               required
             />
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-8">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">Mesaj</Label>
             <Textarea
               id="message"
-              placeholder="Type your message here..."
+              placeholder="Scrieți mesajul dumneavoastră aici...
+
+"
               required
               rows={5}
             />

@@ -19,10 +19,12 @@ import {
   IconBuildingSkyscraper,
   IconCalendarMonth,
   IconCar,
+  IconCarGarage,
   IconCurrencyDollar,
   IconDeviceDesktopAnalytics,
   IconFlame,
   IconHome,
+  IconLeaf,
   IconMapPin,
   IconMountain,
   IconMovie,
@@ -31,27 +33,60 @@ import {
   IconRipple,
   IconRuler,
   IconSailboat,
+  IconSwimming,
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 
 const featureIcons: { [key: string]: JSX.Element } = {
-  Pool: <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Infinity Pool": <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Private Pool": <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  Garden: <IconPlant className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  Garage: <IconCar className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  Balcony: <IconBuildingSkyscraper className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Mountain View": <IconMountain className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Rooftop Terrace": <IconBuildingSkyscraper className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Lake Access": <IconSailboat className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  Gym: <IconBarbell className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Home Theater": <IconMovie className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Wine Cellar": <IconBottle className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Smart Home System": <IconDeviceDesktopAnalytics className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  Fireplace: <IconFlame className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "Fire Pit": <IconFlame className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
-  "River View": <IconRipple className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />,
+  Pool: (
+    <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Piscina: (
+    <IconSwimming className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Private Pool": (
+    <IconPool className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Garden: (
+    <IconLeaf className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Garage: (
+    <IconCarGarage className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Balcony: (
+    <IconBuildingSkyscraper className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Mountain View": (
+    <IconMountain className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Rooftop Terrace": (
+    <IconBuildingSkyscraper className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Lake Access": (
+    <IconSailboat className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Gym: (
+    <IconBarbell className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Home Theater": (
+    <IconMovie className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Wine Cellar": (
+    <IconBottle className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Smart Home System": (
+    <IconDeviceDesktopAnalytics className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  Fireplace: (
+    <IconFlame className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "Fire Pit": (
+    <IconFlame className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
+  "River View": (
+    <IconRipple className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+  ),
 };
 
 export const Card = React.memo(
@@ -97,8 +132,7 @@ export const Card = React.memo(
             <ModalBody>
               <ModalContent>
                 <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
-                  Book your viewing to{" "}
-                  <br />
+                  Book your viewing to <br />
                   <span className="px-1 py-0.5 rounded-md bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200">
                     {card.title}
                   </span>{" "}
@@ -196,7 +230,7 @@ export const Card = React.memo(
                 </div>
               </ModalContent>
               <ModalFooter className="gap-4">
-                <Link href='/contact'>
+                <Link href="/contact">
                   <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
                     Book Now
                   </button>

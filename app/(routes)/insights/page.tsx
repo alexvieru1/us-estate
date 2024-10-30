@@ -59,43 +59,51 @@ const page = () => {
 
   const features = [
     {
-      title: "Market Trends and Analysis",
-      description: "Explore the latest market trends, pricing forecasts, and insights into the luxury real estate market.",
+      title: "Analiza Pieței și Tendințe",
+      description:
+        "Explorați cele mai recente tendințe de pe piața imobiliară de lux, previziuni de prețuri și informații valoroase despre evoluția acestui sector dinamic. Ne asigurăm că sunteți mereu la curent cu cele mai importante schimbări și oportunități din piață.",
       icon: <IconChartLine />,
     },
     {
-      title: "Property Buying Guides",
-      description: "Detailed guides to help you navigate the process of buying high-end properties.",
+      title: "Ghiduri pentru Achiziția de Proprietăți",
+      description:
+        "Oferim ghiduri detaliate care vă ajută să navigați prin procesul complex de achiziție a proprietăților de lux. De la selecția inițială a imobilului până la finalizarea tranzacției, suntem aici pentru a vă oferi suport și informații utile.",
       icon: <IconFileText />,
     },
     {
-      title: "Featured Properties & Case Studies",
-      description: "Showcase of our exclusive properties and success stories from satisfied buyers.",
+      title: "Proprietăți Recomandate și Studii de Caz",
+      description:
+        "Vă prezentăm o selecție a proprietăților noastre exclusive și poveștile de succes ale clienților satisfăcuți. Fiecare studiu de caz ilustrează modul în care am realizat visurile clienților noștri și cum am făcut posibilă găsirea locuinței ideale.",
       icon: <IconBuildingSkyscraper />,
     },
     {
-      title: "Interior Design & Architecture Trends",
-      description: "Stay ahead of the latest trends in interior design and architecture for luxury homes.",
+      title: "Tendințe în Design Interior și Arhitectură",
+      description:
+        "Rămâneți la curent cu cele mai recente tendințe în designul interior și arhitectură pentru locuințele de lux. Vă oferim informații despre stiluri, materiale și soluții inovatoare care pot transforma un spațiu obișnuit într-un adevărat refugiu de eleganță.",
       icon: <IconBrush />,
     },
     {
-      title: "Local Area Highlights",
-      description: "Discover the best neighborhoods and regions for luxury real estate investment.",
+      title: "Puncte de Atracție",
+      description:
+        "Descoperiți cele mai bune cartiere și regiuni pentru investiții imobiliare de lux. Vă oferim informații despre facilitățile locale, cultura comunității și avantajele fiecărei zone pentru a vă ajuta să faceți o alegere informată.",
       icon: <IconLocation />,
     },
     {
-      title: "Buyer & Seller Resources",
-      description: "Tips and resources for buyers and sellers to maximize their real estate transactions.",
+      title: "Resurse pentru Investitori",
+      description:
+        "Furnizăm sfaturi și resurse esențiale pentru cumpărători și vânzători pentru a maximiza succesul tranzacțiilor imobiliare. Indiferent dacă sunteți la prima achiziție sau un investitor experimentat, avem soluții adaptate nevoilor dumneavoastră.",
       icon: <IconBriefcase />,
     },
     {
-      title: "Investment Insights",
-      description: "Expert advice on investing in high-value properties and maximizing returns.",
+      title: "Perspective de Investiții",
+      description:
+        "Beneficiați de sfaturi de la experți în investiții în proprietăți de mare valoare și învățați cum să maximizați randamentele. Vă ghidăm prin oportunitățile de pe piața imobiliară de lux pentru a vă ajuta să luați cele mai bune decizii financiare.",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "Sustainability & Eco-Luxury",
-      description: "Learn about sustainable building practices and the growing trend of eco-luxury homes.",
+      title: "Sustenabilitate și Eco-Luxury",
+      description:
+        "Aflați despre practicile de construcție sustenabile și tendința tot mai mare a locuințelor eco-luxoase. Viziunea noastră se extinde dincolo de estetica luxului, punând accent pe responsabilitatea față de mediu și pe crearea unor locuințe care respectă natura.",
       icon: <IconTree />,
     },
   ];
@@ -151,7 +159,6 @@ const page = () => {
       <FloatingDock items={links} />
     </div>
   );
-  
 };
 
 export default page;
