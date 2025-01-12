@@ -148,12 +148,12 @@ export const Card = React.memo(
                           rotate: Math.random() * 20 - 10,
                         }}
                         whileHover={{
-                          scale: 1.1,
+                          scale: 2.5,
                           rotate: 0,
                           zIndex: 100,
                         }}
                         whileTap={{
-                          scale: 1.1,
+                          scale: 2.5,
                           rotate: 0,
                           zIndex: 100,
                         }}
