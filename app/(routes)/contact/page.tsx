@@ -67,32 +67,32 @@ const ContactPage = () => {
 
   const links = [
     {
-      title: "Home",
+      title: "Acasa",
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/",
     },
     {
-      title: "Our Story",
+      title: "Despre Noi",
       icon: (
         <IconBook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/our-story",
+      href: "/despre-noi",
     },
     {
-      title: "Properties",
+      title: "Proprietati",
       icon: (
         <IconHomeDollar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/properties",
+      href: "/proprietati",
     },
     {
-      title: "Insights",
+      title: "Resurse", // You can change this to "Blog" if preferred
       icon: (
         <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/insights",
+      href: "/resurse",
     },
     {
       title: "Contact",

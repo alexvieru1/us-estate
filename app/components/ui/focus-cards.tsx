@@ -16,11 +16,13 @@ import {
   IconBath,
   IconBed,
   IconBottle,
+  IconBuildingCommunity,
   IconBuildingSkyscraper,
   IconCalendarMonth,
   IconCar,
   IconCarGarage,
   IconCurrencyDollar,
+  IconCurrencyEuro,
   IconDeviceDesktopAnalytics,
   IconFlame,
   IconHome,
@@ -138,7 +140,7 @@ export const Card = React.memo(
             </ModalTrigger>
             <ModalBody>
               <ModalContent>
-                <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
+                <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center lg:mb-8">
                   Book your viewing to <br />
                   <span className="px-1 py-0.5 rounded-md bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200">
                     {card.title}
@@ -154,13 +156,15 @@ export const Card = React.memo(
                   <CarouselContent className="flex">
                     {card.images.map((image: string, idx: number) => (
                       <CarouselItem key={idx} className="flex-shrink-0 w-full">
-                        <Image
-                          src={image}
-                          alt={`Image ${idx}`}
-                          width={500}
-                          height={500}
-                          className="rounded-lg object-cover w-full"
-                        />
+                        <div className="h-96 w-full flex justify-center items-center rounded-lg">
+                          <Image
+                            src={image}
+                            alt={`Image ${idx}`}
+                            width={500}
+                            height={500}
+                            className="rounded-lg object-cover w-full"
+                          />
+                        </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
@@ -171,25 +175,35 @@ export const Card = React.memo(
                     Next
                   </CarouselNext>
                 </Carousel>
-                <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-center max-w-sm mx-auto">
+                <div className="py-2 flex flex-wrap gap-x-4 gap-y-6 items-start justify-center max-w-sm mx-auto">
                   <div className="flex  items-center justify-center">
-                    <IconCurrencyDollar className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                    <IconCurrencyEuro className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                     <span className="text-neutral-700 dark:text-neutral-300 text-sm">
                       {card.price.toLocaleString("en-US")}
+                      {card.price >= 1000 && card.price < 10000
+                        ? " / luna"
+                        : ""}
                     </span>
                   </div>
-                  <div className="flex items-center justify-center">
-                    <IconBed className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                      {card.bedrooms} bedrooms
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center">
-                    <IconBath className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                      {card.bathrooms} bathrooms
-                    </span>
-                  </div>
+                  {card.bedrooms && (
+                    <div className="flex items-center justify-center">
+                      <IconBed className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                      <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                        {card.bedrooms} camere
+                      </span>
+                    </div>
+                  )}
+
+                  {card.bathrooms && (
+                    <div className="flex items-center justify-center">
+                      <IconBath className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                      <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                        {card.bathrooms < 2
+                          ? `${card.bathrooms} grup sanitar`
+                          : `${card.bathrooms} grupuri sanitare`}
+                      </span>
+                    </div>
+                  )}
                   <div className="flex  items-center justify-center">
                     <IconRuler className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                     <span className="text-neutral-700 dark:text-neutral-300 text-sm">
@@ -211,7 +225,7 @@ export const Card = React.memo(
                   <div className="flex items-center justify-center">
                     <IconCalendarMonth className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                     <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                      Built in {card.yearBuilt}
+                      Construit in {card.yearBuilt}
                     </span>
                   </div>
                   {card.features?.map((feat: string, idx: string) => (
@@ -221,7 +235,7 @@ export const Card = React.memo(
                     >
                       {/* Check if the feature exists in the featureIcons mapping */}
                       {featureIcons[feat] || (
-                        <IconMapPin className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                        <IconBuildingCommunity className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                       )}
                       <span className="text-neutral-700 dark:text-neutral-300 text-sm">
                         {feat} {/* Display the feature name */}
@@ -230,7 +244,7 @@ export const Card = React.memo(
                   ))}
                 </div>
               </ModalContent>
-              <ModalFooter className="gap-4">
+              <ModalFooter className="">
                 <Link href="/contact">
                   <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
                     Book Now

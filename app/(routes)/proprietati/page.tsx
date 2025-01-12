@@ -14,32 +14,32 @@ import { FocusCards } from "@/app/components/ui/focus-cards";
 const page = () => {
   const links = [
     {
-      title: "Home",
+      title: "Acasa",
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/",
     },
     {
-      title: "Our Story",
+      title: "Despre Noi",
       icon: (
         <IconBook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/our-story",
+      href: "/despre-noi",
     },
     {
-      title: "Properties",
+      title: "Proprietati",
       icon: (
         <IconHomeDollar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/properties",
+      href: "/proprietati",
     },
     {
-      title: "Insights", // You can change this to "Blog" if preferred
+      title: "Resurse", // You can change this to "Blog" if preferred
       icon: (
         <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/insights",
+      href: "/resurse",
     },
     {
       title: "Contact",
@@ -136,7 +136,7 @@ const page = () => {
       yearBuilt: 2023, // Random year built
       features: [
         "Parcare Privata",
-        "Internet Fibra Optica",
+        // "Internet Fibra Optica",
         "Incalzire in Pardoseala",
         "Terasa",
       ], // Random features
