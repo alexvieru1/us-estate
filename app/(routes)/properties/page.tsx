@@ -53,10 +53,11 @@ const page = () => {
   const cards = [
     {
       title: "Spatiu Comercial / One Cotroceni Park",
-      src: "https://img.freepik.com/free-photo/green-architectural-city-buildings_23-2149554113.jpg?t=st=1729852911~exp=1729856511~hmac=9aa34d99c2e3f1116ca908a7cdb3957224e9e8fb67fdde82846d1204c3b2c504&w=1380",
+      src: "https://i.roamcdn.net/prop/imo/gallery-full-1200w-watermark/48ccb417550390ad7aab2ddeedfa2732/-eyJvdyI6IkNFTlRSQUxOT1JEIn0%3D/prod-property-core-backend-media-imo/83108949/7622d6d9-a252-42ff-864c-484c3d3de70c.jpg",
       images: [
         "https://img.freepik.com/free-photo/living-room-with-large-window-plants-wall_1340-34198.jpg?t=st=1729852943~exp=1729856543~hmac=52a630d054a5d2d526091d48e994d273c6976e7100a698940c7a921997fb1e9c&w=1380",
         "https://img.freepik.com/free-photo/photorealistic-timber-house-interior-with-wooden-decor-furnishings_23-2151263599.jpg?t=st=1729852964~exp=1729856564~hmac=cfd0d5bcafdd578ffc34a956fbaba3d9904c7b0d3d4e17b090479ac550abc638&w=1380",
+        "https://img.freepik.com/free-photo/modern-living-room-interior-design_23-2150794641.jpg?t=st=1729852889~exp=1729856489~hmac=76c89efa6c0c813309385d00561bf2e9214e2830901e8ce90ec50b89f3234899&w=1380",
         "https://img.freepik.com/free-photo/modern-living-room-interior-design_23-2150794641.jpg?t=st=1729852889~exp=1729856489~hmac=76c89efa6c0c813309385d00561bf2e9214e2830901e8ce90ec50b89f3234899&w=1380",
       ],
       price: 4305, // Random price
@@ -73,7 +74,7 @@ const page = () => {
       ], // Random features
     },
     {
-      title: "Spatiu Comercial / One Cotroceni Park",
+      title: "Spatiu Comercial / One Cotroceni Park 1",
       src: "https://img.freepik.com/free-photo/low-angle-shot-beautiful-historical-architectural-structure-paris-france_181624-22776.jpg?t=st=1729853210~exp=1729856810~hmac=d355bf6aaeac8a17f94b6a3f33986d0c8b06d32a1e04bba6bdf3eb7c57d11300&w=1380",
       images: [
         "https://img.freepik.com/free-photo/luxury-living-room-with-city-skyline-view-generative-ai_188544-46252.jpg?t=st=1729853037~exp=1729856637~hmac=2f45f24ced229c7b48a52ec16d9d3bf75a8a5025abb9e44504fd9fd668aca381&w=1380",

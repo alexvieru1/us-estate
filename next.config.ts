@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
       "assets.aceternity.com",
       "images.unsplash.com",
       "img.freepik.com",
+      "i.roamcdn.net",
     ], // Add the external hostname here
   },
 };
