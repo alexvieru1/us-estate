@@ -37,6 +37,13 @@ import {
 } from "@tabler/icons-react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const featureIcons: { [key: string]: JSX.Element } = {
   Pool: (
@@ -139,37 +146,31 @@ export const Card = React.memo(
                   <br />
                   now!
                 </h4>
-                <div className="flex justify-center items-center">
-                  {card.images.map(
-                    (image: string | StaticImport, idx: string) => (
-                      <motion.div
-                        key={"images" + idx}
-                        style={{
-                          rotate: Math.random() * 20 - 10,
-                        }}
-                        whileHover={{
-                          scale: 2.5,
-                          rotate: 0,
-                          zIndex: 100,
-                        }}
-                        whileTap={{
-                          scale: 2.5,
-                          rotate: 0,
-                          zIndex: 100,
-                        }}
-                        className="rounded-xl -mr-4 mt-4 p-1 bg-neutral-800 dark:bg-neutral-100 dark:border-neutral-100 border border-neutral-700 flex-shrink-0 overflow-hidden"
-                      >
+                {/* Carousel for Images */}
+                <Carousel
+                  className="w-full max-w-xl mx-auto"
+                  opts={{ align: "start", loop: true }}
+                >
+                  <CarouselContent className="flex">
+                    {card.images.map((image: string, idx: number) => (
+                      <CarouselItem key={idx} className="flex-shrink-0 w-full">
                         <Image
                           src={image}
-                          alt="bali images"
-                          width="500"
-                          height="500"
-                          className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
+                          alt={`Image ${idx}`}
+                          width={500}
+                          height={500}
+                          className="rounded-lg object-cover w-full"
                         />
-                      </motion.div>
-                    )
-                  )}
-                </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-black rounded-full shadow p-2">
+                    Previous
+                  </CarouselPrevious>
+                  <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-black rounded-full shadow p-2">
+                    Next
+                  </CarouselNext>
+                </Carousel>
                 <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-center max-w-sm mx-auto">
                   <div className="flex  items-center justify-center">
                     <IconCurrencyDollar className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
