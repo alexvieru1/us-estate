@@ -75,7 +75,7 @@ const page = () => {
       ], // Random features
     },
     {
-      title: "Spatiu Comercial / One Cotroceni Park",
+      title: "Spatiu Comercial One Cotroceni Park",
       src: "https://i.roamcdn.net/prop/imo/gallery-full-1200w-watermark/96dac4cdb3361e1cf69947b975046f6f/-eyJvdyI6IkNFTlRSQUxOT1JEIn0%3D/prod-property-core-backend-media-imo/83109439/8b078c0d-5946-417a-b3f2-bf2d1468469b.jpg",
       images: [
         "https://i.roamcdn.net/prop/imo/gallery-full-1200w-watermark/dacb89cea3657c59d966801e13e08d7a/-eyJvdyI6IkNFTlRSQUxOT1JEIn0%3D/prod-property-core-backend-media-imo/83108826/7034eaa4-fabd-44c2-9cc6-09ce09e85f94.jpg",

@@ -64,24 +64,24 @@ const page = () => {
         "Explorați cele mai recente tendințe de pe piața imobiliară de lux, previziuni de prețuri și informații valoroase despre evoluția acestui sector dinamic. Ne asigurăm că sunteți mereu la curent cu cele mai importante schimbări și oportunități din piață.",
       icon: <IconChartLine />,
     },
-    {
-      title: "Ghiduri pentru Achiziția de Proprietăți",
-      description:
-        "Oferim ghiduri detaliate care vă ajută să navigați prin procesul complex de achiziție a proprietăților de lux. De la selecția inițială a imobilului până la finalizarea tranzacției, suntem aici pentru a vă oferi suport și informații utile.",
-      icon: <IconFileText />,
-    },
-    {
-      title: "Proprietăți Recomandate și Studii de Caz",
-      description:
-        "Vă prezentăm o selecție a proprietăților noastre exclusive și poveștile de succes ale clienților satisfăcuți. Fiecare studiu de caz ilustrează modul în care am realizat visurile clienților noștri și cum am făcut posibilă găsirea locuinței ideale.",
-      icon: <IconBuildingSkyscraper />,
-    },
-    {
-      title: "Tendințe în Design Interior și Arhitectură",
-      description:
-        "Rămâneți la curent cu cele mai recente tendințe în designul interior și arhitectură pentru locuințele de lux. Vă oferim informații despre stiluri, materiale și soluții inovatoare care pot transforma un spațiu obișnuit într-un adevărat refugiu de eleganță.",
-      icon: <IconBrush />,
-    },
+    // {
+    //   title: "Ghiduri pentru Achiziția de Proprietăți",
+    //   description:
+    //     "Oferim ghiduri detaliate care vă ajută să navigați prin procesul complex de achiziție a proprietăților de lux. De la selecția inițială a imobilului până la finalizarea tranzacției, suntem aici pentru a vă oferi suport și informații utile.",
+    //   icon: <IconFileText />,
+    // },
+    // {
+    //   title: "Proprietăți Recomandate și Studii de Caz",
+    //   description:
+    //     "Vă prezentăm o selecție a proprietăților noastre exclusive și poveștile de succes ale clienților satisfăcuți. Fiecare studiu de caz ilustrează modul în care am realizat visurile clienților noștri și cum am făcut posibilă găsirea locuinței ideale.",
+    //   icon: <IconBuildingSkyscraper />,
+    // },
+    // {
+    //   title: "Tendințe în Design Interior și Arhitectură",
+    //   description:
+    //     "Rămâneți la curent cu cele mai recente tendințe în designul interior și arhitectură pentru locuințele de lux. Vă oferim informații despre stiluri, materiale și soluții inovatoare care pot transforma un spațiu obișnuit într-un adevărat refugiu de eleganță.",
+    //   icon: <IconBrush />,
+    // },
     {
       title: "Puncte de Atracție",
       description:
@@ -94,12 +94,12 @@ const page = () => {
         "Furnizăm sfaturi și resurse esențiale pentru cumpărători și vânzători pentru a maximiza succesul tranzacțiilor imobiliare. Indiferent dacă sunteți la prima achiziție sau un investitor experimentat, avem soluții adaptate nevoilor dumneavoastră.",
       icon: <IconBriefcase />,
     },
-    {
-      title: "Perspective de Investiții",
-      description:
-        "Beneficiați de sfaturi de la experți în investiții în proprietăți de mare valoare și învățați cum să maximizați randamentele. Vă ghidăm prin oportunitățile de pe piața imobiliară de lux pentru a vă ajuta să luați cele mai bune decizii financiare.",
-      icon: <IconCurrencyDollar />,
-    },
+    // {
+    //   title: "Perspective de Investiții",
+    //   description:
+    //     "Beneficiați de sfaturi de la experți în investiții în proprietăți de mare valoare și învățați cum să maximizați randamentele. Vă ghidăm prin oportunitățile de pe piața imobiliară de lux pentru a vă ajuta să luați cele mai bune decizii financiare.",
+    //   icon: <IconCurrencyDollar />,
+    // },
     {
       title: "Sustenabilitate și Eco-Luxury",
       description:

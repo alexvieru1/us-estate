@@ -113,7 +113,7 @@ const page = () => {
       ),
       badge: "Misiunea Noastra",
       image:
-        "https://img.freepik.com/free-photo/modern-minimalist-office_23-2151780700.jpg?t=st=1729851409~exp=1729855009~hmac=931cea8188a986da3dbff624770d4af4fb1e5a9856926076a86af59703a0bdbd&w=1380",
+        "https://i.roamcdn.net/prop/imo/gallery-full-1200w-watermark/3b629661e59bd4ffebba2a546440332b/-eyJvdyI6IkNFTlRSQUxOT1JEIn0%3D/prod-property-core-backend-media-imo/82212390/fdb9c596-567e-4194-9232-83bd63c8eb1b.jpg",
     },
     {
       title: "Experti in domeniu",
