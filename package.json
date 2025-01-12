@@ -15,12 +15,14 @@
     "framer-motion": "^11.11.9",
     "mini-svg-data-uri": "^1.4.4",
     "next": "15.0.0",
+    "nodemailer": "^6.9.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.16",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

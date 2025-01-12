@@ -50,6 +50,43 @@ export default function Home() {
       href: "/contact",
     },
   ];
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/",
+    },
+    {
+      title: "Our Story",
+      icon: (
+        <IconBook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/our-story",
+    },
+    {
+      title: "Properties",
+      icon: (
+        <IconHomeDollar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/properties",
+    },
+    {
+      title: "Insights", // You can change this to "Blog" if preferred
+      icon: (
+        <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/insights",
+    },
+    {
+      title: "Contact",
+      icon: (
+        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/contact",
+    },
+  ];
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -75,6 +112,7 @@ export default function Home() {
           </Highlight>
         </motion.h1>
       </HeroHighlight>
+      <FloatingDock items={links} />
       <FloatingDock items={links} />
     </div>
   );

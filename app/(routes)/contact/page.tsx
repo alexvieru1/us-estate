@@ -1,5 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { Label } from "@/app/components/ui/label";
+import { Input } from "@/app/components/ui/input";
+import { Textarea } from "@/app/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { FloatingDock } from "@/app/components/ui/floating-dock";
 import {
   IconBook,
@@ -8,12 +12,59 @@ import {
   IconHomeDollar,
   IconMail,
 } from "@tabler/icons-react";
-import { Label } from "@/app/components/ui/label";
-import { Input } from "@/app/components/ui/input";
-import { Textarea } from "@/app/components/ui/textarea";
-import { cn } from "@/lib/utils";
+import { sendContactForm } from "@/lib/api";
 
-const page = () => {
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [alert, setAlert] = useState<null | { type: string; message: string }>(
+    null
+  );
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setAlert(null);
+
+    try {
+      setIsSubmitting(true);
+      await sendContactForm({
+        name: formData.fullName,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
+      setAlert({ type: "success", message: "Mesajul a fost trimis cu succes!" });
+      setFormData({
+        fullName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      setAlert({
+        type: "error",
+        message: "Eroare la trimiterea mesajului. Vă rugăm să încercați din nou.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const links = [
     {
       title: "Home",
@@ -37,7 +88,7 @@ const page = () => {
       href: "/properties",
     },
     {
-      title: "Insights", // You can change this to "Blog" if preferred
+      title: "Insights",
       icon: (
         <IconBulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -52,11 +103,6 @@ const page = () => {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Contact form submitted");
-  };
-
   return (
     <div className="flex flex-col justify-center items-center mb-10">
       <div className="mt-10 lg:mt-20 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
@@ -68,70 +114,80 @@ const page = () => {
           formularul de mai jos.
         </p>
 
-        <form className="my-8" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-            <LabelInputContainer>
-              <Label htmlFor="firstname">Prenume</Label>
-              <Input id="firstname" placeholder="John" type="text" required />
-            </LabelInputContainer>
-            <LabelInputContainer>
-              <Label htmlFor="lastname">Nume</Label>
-              <Input id="lastname" placeholder="Doe" type="text" required />
-            </LabelInputContainer>
+        {alert && (
+          <div
+            className={`p-2 my-4 rounded-md ${
+              alert.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+            }`}
+          >
+            {alert.message}
           </div>
+        )}
 
+        <form className="my-8" onSubmit={handleSubmit}>
+          {/* Full Name */}
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Adresă de email</Label>
+            <Label htmlFor="fullName">Nume complet</Label>
             <Input
-              id="email"
-              placeholder="johndoe@email.com"
-              type="email"
+              id="fullName"
+              placeholder="Ion Popescu"
+              type="text"
+              value={formData.fullName}
+              onChange={handleChange}
               required
             />
           </LabelInputContainer>
 
+          {/* Email */}
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="email">Adresă de email</Label>
+            <Input
+              id="email"
+              placeholder="ionpopescu@email.com"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </LabelInputContainer>
+
+          {/* Subject */}
           <LabelInputContainer className="mb-4">
             <Label htmlFor="subject">Subiect</Label>
             <Input
               id="subject"
               placeholder="Subiectul mesajului dumneavoastră"
               type="text"
+              value={formData.subject}
+              onChange={handleChange}
               required
             />
           </LabelInputContainer>
 
+          {/* Message */}
           <LabelInputContainer className="mb-8">
             <Label htmlFor="message">Mesaj</Label>
             <Textarea
               id="message"
-              placeholder="Scrieți mesajul dumneavoastră aici...
-
-"
+              placeholder="Scrieți mesajul dumneavoastră aici..."
+              value={formData.message}
+              onChange={handleChange}
               required
               rows={5}
             />
           </LabelInputContainer>
 
           <button
-            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="bg-gradient-to-br from-black dark:from-zinc-900 to-neutral-600 block w-full text-white rounded-md h-10 font-medium shadow-md"
             type="submit"
+            disabled={isSubmitting}
           >
-            Submit &rarr;
-            <BottomGradient />
+            {isSubmitting ? "Se trimite..." : "Trimite mesajul"}
           </button>
         </form>
       </div>
       <FloatingDock items={links} />
     </div>
-  );
-};
-
-const BottomGradient = () => {
-  return (
-    <>
-      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-    </>
   );
 };
 
@@ -149,4 +205,4 @@ const LabelInputContainer = ({
   );
 };
 
-export default page;
+export default ContactPage;
